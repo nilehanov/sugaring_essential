@@ -105,6 +105,10 @@ header {
   outline: none;
   padding: 12px 18px;
   border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
   color: white;
   font-weight: 700;
@@ -181,6 +185,7 @@ header {
   align-items: center;
   gap: 8px;
   font-weight: 600;
+  flex-wrap: wrap;
 }
 
 .pill span {
@@ -204,7 +209,7 @@ header {
 
 .section-title {
   margin: 0;
-  font-size: 28px;
+  font-size: clamp(24px, 3vw, 32px);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -322,13 +327,112 @@ header {
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .page {
+    padding: 28px 20px 68px;
+  }
+
+  .section {
+    margin: 48px 0;
+  }
+
+  .nav {
+    padding: 14px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .nav-links a {
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .nav-links .btn {
+    width: 100%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 28px;
+  }
+
+  .hero-card {
+    padding: 24px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+  }
+
+  .cards,
+  .grid-2,
+  .contact-grid {
+    gap: 14px;
+  }
+}
+
 @media (max-width: 720px) {
   .page {
-    padding: 24px 18px 64px;
+    padding: 20px 16px 56px;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
   }
 
   .cta-block {
     grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 7vw, 34px);
+  }
+
+  .hero-card {
+    padding: 20px;
+  }
+
+  .cards {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .section {
+    margin: 38px 0;
+  }
+
+  .chip {
+    padding: 9px 11px;
+  }
+
+  .cta-block .btn,
+  .hero .btn,
+  .nav-links .btn {
+    width: 100%;
   }
 }
 

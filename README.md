@@ -15,20 +15,35 @@ Natural sugaring hair removal studio site. Built with Vite, React, and TypeScrip
 - `public/` — static assets (favicon)
 - `Dockerfile` — containerized build for Cloud Run / other hosts
 
-## Getting started (local)
-1) Install Node.js 18+.
+## How to start (desktop + mobile)
+1) Install Node.js 18+ and npm.
 2) Install deps:  
 ```bash
 npm install
 ```
-3) Run dev server:  
+3) Desktop preview:  
 ```bash
 npm run dev
 ```
-4) Production build + preview:  
+- Open http://localhost:5173 to browse the site.
+4) Mobile preview in the browser:  
+- With the dev server running, open Chrome/Edge devtools and toggle the device toolbar (`Cmd+Shift+M` on macOS).  
+- Pick a profile (e.g., iPhone 14), then reload to apply the viewport and device pixel ratio.  
+- Use the “Responsive” option to sweep widths down to ~320px and verify layout + tap targets.
+5) Mobile on a real device (same Wi‑Fi):  
+```bash
+npm run dev -- --host --port 4173
+```
+- Find your machine’s LAN IP (e.g., `ipconfig getifaddr en0` on macOS).  
+- On your phone, open `http://YOUR_IP:4173` and accept any “allow local network” prompts.
+6) Production build + preview:  
 ```bash
 npm run build
-npm run preview
+npm run preview -- --host
+```
+7) Quality check:  
+```bash
+npm run lint
 ```
 
 ## Customizing content
@@ -86,6 +101,11 @@ Access at `https://storage.googleapis.com/YOUR_BUCKET_NAME/index.html` or set a 
 ## CI / quality
 - `npm run lint` runs TypeScript + React lint rules.
 - Keep new components typed and colocated with related data.
+
+## Mobile experience updates
+- Navigation stacks on small screens with full-width call/book actions for easy tapping.
+- Hero, cards, CTA banner, and grids collapse to single columns with adjusted padding.
+- Typography uses fluid sizing and chips/pills wrap to keep labels readable on narrow devices.
 
 ## Troubleshooting
 - If the dev server doesn’t start, confirm Node 18+, reinstall deps, then retry `npm run dev`.
