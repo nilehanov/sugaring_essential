@@ -1,0 +1,13 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>Sugaring Essential</title>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop stop-color="#F7D7BA" offset="0%"/>
+      <stop stop-color="#E6B090" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#g)"/>
+  <path d="M38 72c6 12 44 12 44-12 0-20-28-20-28-32 0-6 5-10 12-10 6 0 12 3 14 8" fill="none" stroke="#4A2E1B" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="58" cy="42" r="5" fill="#4A2E1B"/>
+</svg>
+
