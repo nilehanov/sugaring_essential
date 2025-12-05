@@ -15,3 +15,4 @@ export function FAQItem({ item }: Props) {
   );
 }
 
+
